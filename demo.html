@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div id="screen">
+    <form>
+        <h3>Đăng Ký</h3>
+        <input type="text" id="ten"  placeholder="Tên truy cập" required>
+        <br>
+        <span id="loi_ten" ></span>
+        <br>
+        <input type="password" id="pass"  placeholder="Mật khẩu">
+        <br>
+        <span id="loi_pass"></span>
+        <br>
+        <input type="password" id="pass1" placeholder="Nhập lại mật khẩu">
+        <br>
+        <span id="loi_pass1"></span>
+        <br>
+        <input type="text" id="mail"  placeholder="Email">
+        <br>
+        <span id="loi_mail"></span>
+        <br>
+        bạn cần sử dụng email trong trường hợp cần đặt lại mật khẩu
+        <br>
+        <select>
+            <option> VI+1340</option>
+            <option> AI+1340</option>
+            <option> TI+1340</option>
+        </select>
+        <input type="text" placeholder="Số điện thoại">
+        <br>
+        <select>
+            <option>VietNam</option>
+            <option>Virgin Islands (U.S.)</option>
+        </select>
+        <br>
+        <input type="checkbox"> Tôi đồng ý với Điều Khoản Dịch vụ và Chính sách bảo mật
+        <br>
+        <button  onclick="return kiemtra()">Đăng Ký Ngay</button>
+    </form>
+    </div>
+    <script type="text/javascript">
+    function kiemtra(){
+        let kiem_tra_loi= false;
+        let ten=document.getElementById('ten').value;
+        if(ten.length===0){
+            document.getElementById('loi_ten').innerHTML='tên không được để trống';
+           kiem_tra_loi=true;
+        }
+        let pass=document.getElementById('pass').value;
+        if(pass.length===0){
+            document.getElementById('loi_pass').innerHTML='mật khẩu không được để trống';
+            kiem_tra_loi=true;
+        }
+        let mail=document.getElementById('mail').value;
+        if(mail.length===0){
+            document.getElementById('loi_mail').innerHTML='email không được để trống';
+            kiem_tra_loi=true;
+        }
+        let pass1=document.getElementById('pass1').value;
+        if(pass1!==pass){
+            document.getElementById('loi_pass1').innerHTML='mật khẩu không đúng';
+            kiem_tra_loi=true;
+        }
+        if(kiem_tra_loi) return false;
+    }
+    </script>
+</body>
+</html>
